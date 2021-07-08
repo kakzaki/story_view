@@ -110,7 +110,7 @@ class StoryItem {
     required StoryController controller,
     Key? key,
     BoxFit imageFit = BoxFit.fitWidth,
-    String? caption,
+    Widget? child,
     bool shown = false,
     Map<String, dynamic>? requestHeaders,
     Duration? duration,
@@ -139,16 +139,9 @@ class StoryItem {
                     horizontal: 24,
                     vertical: 8,
                   ),
-                  color: caption != null ? Colors.black54 : Colors.transparent,
-                  child: caption != null
-                      ? Text(
-                          caption,
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white,
-                          ),
-                          textAlign: TextAlign.center,
-                        )
+                  color: child != null ? Colors.black54 : Colors.transparent,
+                  child: child != null
+                      ? child
                       : SizedBox(),
                 ),
               ),
